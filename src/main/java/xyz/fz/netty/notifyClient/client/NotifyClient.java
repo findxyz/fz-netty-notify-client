@@ -79,7 +79,7 @@ public class NotifyClient {
                         public void run() {
                             connect();
                         }
-                    }, 15, TimeUnit.SECONDS);
+                    }, 15 + (int) (Math.random() * 10), TimeUnit.SECONDS);
                 } else {
                     System.out.println("notify client shutdown...");
                     BaseUtil.scheduledExecutor.shutdown();
