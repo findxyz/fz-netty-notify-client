@@ -1,10 +1,10 @@
-package xyz.fz.netty.notifyClient.util;
+package xyz.fz.netty.notify.util;
 
 import com.google.gson.Gson;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
-import static xyz.fz.netty.notifyClient.util.Constants.DELIMITER_STR;
+import static xyz.fz.netty.notify.util.Constants.DELIMITER_STR;
 
 public class BaseUtil {
 

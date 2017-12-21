@@ -1,10 +1,10 @@
-package xyz.fz.netty.notifyClient.handler;
+package xyz.fz.netty.notify.handler;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import xyz.fz.netty.notifyClient.client.NotifyClient;
-import xyz.fz.netty.notifyClient.model.NotifyMessage;
-import xyz.fz.netty.notifyClient.util.BaseUtil;
+import xyz.fz.netty.notify.client.NotifyClient;
+import xyz.fz.netty.notify.model.NotifyMessage;
+import xyz.fz.netty.notify.util.BaseUtil;
 
 public class NotifyClientHandler extends SimpleChannelInboundHandler<String> {
 

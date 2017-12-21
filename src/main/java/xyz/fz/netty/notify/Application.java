@@ -1,8 +1,8 @@
-package xyz.fz.netty.notifyClient;
+package xyz.fz.netty.notify;
 
-import xyz.fz.netty.notifyClient.client.NotifyClient;
-import xyz.fz.netty.notifyClient.handler.MessageHandler;
-import xyz.fz.netty.notifyClient.model.NotifyMessage;
+import xyz.fz.netty.notify.client.NotifyClient;
+import xyz.fz.netty.notify.handler.MessageHandler;
+import xyz.fz.netty.notify.model.NotifyMessage;
 
 import java.util.UUID;
 

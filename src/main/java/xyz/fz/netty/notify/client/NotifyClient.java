@@ -1,4 +1,4 @@
-package xyz.fz.netty.notifyClient.client;
+package xyz.fz.netty.notify.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
@@ -13,13 +13,13 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
-import xyz.fz.netty.notifyClient.handler.MessageHandler;
-import xyz.fz.netty.notifyClient.handler.NotifyClientHandler;
-import xyz.fz.netty.notifyClient.util.BaseUtil;
+import xyz.fz.netty.notify.handler.MessageHandler;
+import xyz.fz.netty.notify.handler.NotifyClientHandler;
+import xyz.fz.netty.notify.util.BaseUtil;
 
 import java.util.concurrent.TimeUnit;
 
-import static xyz.fz.netty.notifyClient.util.Constants.DELIMITER_BYTES;
+import static xyz.fz.netty.notify.util.Constants.DELIMITER_BYTES;
 
 public class NotifyClient {
 

@@ -1,4 +1,4 @@
-package xyz.fz.netty.notifyClient.model;
+package xyz.fz.netty.notify.model;
 
 import java.util.Map;
 
