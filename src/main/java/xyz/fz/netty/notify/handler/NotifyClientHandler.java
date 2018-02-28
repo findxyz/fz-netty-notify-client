@@ -25,21 +25,22 @@ public class NotifyClientHandler extends SimpleChannelInboundHandler<String> {
 
     @Override
     protected void channelRead0(final ChannelHandlerContext ctx, final String s) throws Exception {
+        NotifyMessage pongMessage = new NotifyMessage.Builder().pongMessage().build();
+        final String resultPongMessage = BaseUtil.toDelimiterJson(pongMessage);
         BaseUtil.scheduledExecutor.execute(new Runnable() {
             @Override
             public void run() {
                 // done server message
                 System.out.println("server message: " + s);
                 NotifyMessage message = BaseUtil.parseJson(s, NotifyMessage.class);
-                NotifyMessage pongMessage = new NotifyMessage.Builder().pongMessage().build();
                 if (message != null) {
                     switch (message.getType()) {
                         case NotifyMessage.MESSAGE:
-                            ctx.channel().writeAndFlush(BaseUtil.toDelimiterJson(pongMessage));
+                            ctx.channel().writeAndFlush(resultPongMessage);
                             messageHandler.handle(message);
                             break;
                         case NotifyMessage.PING:
-                            ctx.channel().writeAndFlush(BaseUtil.toDelimiterJson(pongMessage));
+                            ctx.channel().writeAndFlush(resultPongMessage);
                             break;
                         case NotifyMessage.PONG:
                             break;
