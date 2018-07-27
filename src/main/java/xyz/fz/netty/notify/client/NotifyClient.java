@@ -13,6 +13,8 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 import xyz.fz.netty.notify.handler.MessageHandler;
 import xyz.fz.netty.notify.handler.NotifyClientHandler;
 import xyz.fz.netty.notify.util.BaseUtil;
@@ -51,6 +53,7 @@ public class NotifyClient {
                 @Override
                 public void initChannel(SocketChannel ch) throws Exception {
                     ByteBuf delimiter = Unpooled.copiedBuffer(DELIMITER_BYTES);
+                    ch.pipeline().addLast(new LoggingHandler(LogLevel.INFO));
                     ch.pipeline().addLast(new DelimiterBasedFrameDecoder(8192, delimiter));
                     ch.pipeline().addLast(new StringDecoder());
                     ch.pipeline().addLast(new StringEncoder());
